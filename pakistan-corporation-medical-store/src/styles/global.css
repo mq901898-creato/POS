@@ -1,0 +1,56 @@
+/* Global styling: fonts, base resets and small utilities for the demo. */
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #f3f5f9;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Keep numeric figures aligned in tables and cards */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Receipt paper look for the invoice preview */
+.receipt {
+  font-family: 'Courier New', ui-monospace, monospace;
+  font-size: 12.5px;
+  color: #111;
+}
+.receipt-dashed {
+  border-top: 1px dashed #9aa3b2;
+  margin: 10px 0;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.35; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-3px); }
+}
+
+@media print {
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; left: 0; top: 0; width: 80mm; }
+}
